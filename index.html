@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0f5">
+  <meta name="description" content="A personal first-aid reference, medical learning hub, and study notebook for Souhaila.">
+  <title>Doctore Souhaila — Study & First Aid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="script.js?v=3" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation" data-i18n-aria="mainNavigation">
+      <a class="brand" href="#" data-view-link="dashboard" aria-label="Doctore Souhaila home" data-i18n-aria="home">
+        <span class="brand-mark"><i class="fa-solid fa-heart-pulse"></i></span>
+        <span class="brand-name">doctore<span>souhaila</span></span>
+      </a>
+      <div class="side-label" data-i18n="workspace">WORKSPACE</div>
+      <nav class="main-nav">
+        <button class="nav-link active" data-view="dashboard"><i class="fa-solid fa-grid-2"></i><span data-i18n="overview">Overview</span></button>
+        <button class="nav-link" data-view="firstaid"><i class="fa-solid fa-kit-medical"></i><span data-i18n="firstAid">First aid library</span><span class="nav-count" id="aidNavCount">100</span></button>
+        <button class="nav-link" data-view="learn"><i class="fa-solid fa-book-open"></i><span data-i18n="learning">Learning hub</span></button>
+        <button class="nav-link" data-view="quiz"><i class="fa-solid fa-circle-question"></i><span data-i18n="quiz">Quiz challenge</span></button>
+        <button class="nav-link" data-view="notebook"><i class="fa-solid fa-book-bookmark"></i><span data-i18n="notebook">Ribbon notebook</span></button>
+      </nav>
+      <div class="sidebar-note">
+        <span class="note-sparkle"><i class="fa-solid fa-sparkles"></i></span>
+        <p data-i18n="sidebarQuote">Small steps today. Steady hands tomorrow.</p>
+        <span class="note-caption" data-i18n="personalDesk">SOUHAILA'S STUDY DESK</span>
+      </div>
+      <div class="sidebar-footer"><span class="status-dot"></span><span data-i18n="offlineReady">Ready for your next study session</span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+        <div class="breadcrumb"><span data-i18n="myDesk">My desk</span><i class="fa-solid fa-chevron-right"></i><strong id="currentCrumb">Overview</strong></div>
+        <div class="top-actions">
+          <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="language">
+            <button type="button" data-lang="ar" aria-label="العربية">ع</button>
+            <button type="button" data-lang="fr" aria-label="Français">FR</button>
+            <button type="button" data-lang="en" aria-label="English">EN</button>
+          </div>
+          <div class="avatar" aria-label="Souhaila">S</div>
+        </div>
+      </header>
+
+      <div class="view-stage" id="viewStage">
+        <section class="view active" id="view-dashboard" data-view-panel="dashboard">
+          <div class="dashboard-head">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="personalDashboard">PERSONAL DASHBOARD</span></div>
+              <h1 data-i18n="dashTitle">Curiosity is a<br><em>beautiful</em> first step.</h1>
+              <p class="lead" data-i18n="dashSubtitle">A calm corner for learning biology, building confidence, and keeping useful notes close.</p>
+              <button class="button button-primary" data-go="learn"><span data-i18n="continueLearning">Continue learning</span><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="hero-cross"><i class="fa-solid fa-heart-pulse"></i></div>
+              <span class="float-pill pill-top"><i class="fa-solid fa-brain"></i> <span data-i18n="anatomy">ANATOMY</span></span>
+              <span class="float-pill pill-bottom"><i class="fa-solid fa-heart"></i> <span data-i18n="care">CARE</span></span>
+              <span class="hero-star star-a">✳</span><span class="hero-star star-b">✦</span>
+            </div>
+          </div>
+
+          <div class="stat-grid">
+            <article class="stat-card"><span class="stat-icon rose"><i class="fa-solid fa-kit-medical"></i></span><div><strong id="aidStatCount">100</strong><span data-i18n="firstAidTopics">first-aid topics</span></div><i class="fa-solid fa-arrow-up-right-from-square stat-arrow"></i></article>
+            <article class="stat-card"><span class="stat-icon lilac"><i class="fa-solid fa-book-open"></i></span><div><strong>12</strong><span data-i18n="studyGuides">study guides</span></div><i class="fa-solid fa-arrow-up-right-from-square stat-arrow"></i></article>
+            <article class="stat-card"><span class="stat-icon peach"><i class="fa-solid fa-feather-pointed"></i></span><div><strong id="noteCount">0</strong><span data-i18n="savedNotes">saved notes</span></div><i class="fa-solid fa-arrow-up-right-from-square stat-arrow"></i></article>
+          </div>
+
+          <div class="section-heading">
+            <div><span class="eyebrow" data-i18n="quickAccess">QUICK ACCESS</span><h2 data-i18n="pickUp">Pick up where you like</h2></div>
+            <span class="section-side-note"><i class="fa-regular fa-clock"></i> <span data-i18n="yourPace">Your pace, your path</span></span>
+          </div>
+          <div class="quick-grid">
+            <button class="quick-card quick-firstaid" data-go="firstaid">
+              <span class="quick-icon"><i class="fa-solid fa-kit-medical"></i></span><span class="quick-arrow"><i class="fa-solid fa-arrow-up-right"></i></span>
+              <span class="quick-title" data-i18n="firstAid">First aid library</span><span class="quick-text" data-i18n="firstAidDesc">Clear steps for common emergencies.</span>
+              <span class="quick-footer"><span data-i18n="exploreLibrary">EXPLORE LIBRARY</span><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+            <button class="quick-card quick-learn" data-go="learn">
+              <span class="quick-icon"><i class="fa-solid fa-dna"></i></span><span class="quick-arrow"><i class="fa-solid fa-arrow-up-right"></i></span>
+              <span class="quick-title" data-i18n="learning">Learning hub</span><span class="quick-text" data-i18n="learnDesc">From SVT foundations to anatomy.</span>
+              <span class="quick-footer"><span data-i18n="openStudyGuides">OPEN STUDY GUIDES</span><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+            <button class="quick-card quick-notes" data-go="notebook">
+              <span class="quick-icon"><i class="fa-solid fa-book-bookmark"></i></span><span class="quick-arrow"><i class="fa-solid fa-arrow-up-right"></i></span>
+              <span class="quick-title" data-i18n="notebook">Ribbon notebook</span><span class="quick-text" data-i18n="notesDesc">Keep your questions and discoveries.</span>
+              <span class="quick-footer"><span data-i18n="writeNote">WRITE A NOTE</span><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </div>
+
+          <div class="safety-strip"><span class="safety-icon"><i class="fa-solid fa-shield-heart"></i></span><div><strong data-i18n="safetyTitle">A learning reference, not a substitute for care</strong><p data-i18n="safetyText">In an emergency, contact local emergency services and follow the advice of a qualified professional.</p></div><i class="fa-solid fa-arrow-right safety-arrow"></i></div>
+        </section>
+
+        <section class="view" id="view-firstaid" data-view-panel="firstaid">
+          <div class="page-intro">
+            <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="referenceDesk">QUICK REFERENCE</span></div>
+            <h1 data-i18n="firstAidPageTitle">First aid, made <em>clear.</em></h1>
+            <p class="lead" data-i18n="firstAidPageDesc">Search practical, safety-first guidance. Call local emergency services for a serious or life-threatening emergency.</p>
+          </div>
+          <div class="library-tools">
+            <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="aidSearch" type="search" data-i18n-placeholder="searchAid" placeholder="Search first aid topics..." autocomplete="off"><kbd>/</kbd></label>
+            <div class="filter-row" id="aidFilters" role="group" aria-label="First aid categories" data-i18n-aria="aidCategories"></div>
+          </div>
+          <div class="result-caption"><span id="aidResultCount"></span><span data-i18n="tapForSteps">Select a topic for step-by-step guidance</span></div>
+          <div class="aid-grid" id="aidGrid"></div>
+          <div class="no-results hidden" id="aidEmpty"><i class="fa-solid fa-magnifying-glass"></i><strong data-i18n="nothingFound">No matching topics</strong><span data-i18n="tryAnotherSearch">Try a different search or category.</span></div>
+        </section>
+
+        <section class="view" id="view-learn" data-view-panel="learn">
+          <div class="page-intro learn-intro">
+            <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="studyStudio">STUDY STUDIO · SVT + ANATOMY</span></div>
+            <h1 data-i18n="learnTitle">Understand the body.<br><em>One system at a time.</em></h1>
+            <p class="lead" data-i18n="learnPageDesc">Build from your collège biology foundations, then connect each concept to the bigger picture.</p>
+          </div>
+          <div class="filter-row learn-filters" id="learnFilters" role="group" aria-label="Learning categories" data-i18n-aria="learningCategories"></div>
+          <div class="learn-grid" id="learnGrid"></div>
+        </section>
+
+        <section class="view" id="view-quiz" data-view-panel="quiz">
+          <div class="page-intro">
+            <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="quizEyebrow">FIRST-AID CHALLENGE</span></div>
+            <h1 data-i18n="quizTitle">Test your lifesaving <em>knowledge.</em></h1>
+            <p class="lead" data-i18n="quizDesc">Choose a difficulty, answer 20 randomized questions, and review each explanation immediately.</p>
+          </div>
+          <div class="quiz-shell" id="quizShell">
+            <div class="quiz-level-screen" id="quizLevelScreen">
+              <div class="quiz-level-grid">
+                <button class="quiz-level-card easy" type="button" data-quiz-level="easy">
+                  <span class="quiz-level-icon"><i class="fa-solid fa-seedling"></i></span>
+                  <strong data-i18n="easyLevel">Easy</strong>
+                  <span data-i18n="easyLevelDesc">Basic emergency knowledge</span>
+                  <b>1000 <span data-i18n="questionsLabel">questions</span></b>
+                </button>
+                <button class="quiz-level-card medium" type="button" data-quiz-level="medium">
+                  <span class="quiz-level-icon"><i class="fa-solid fa-compass"></i></span>
+                  <strong data-i18n="mediumLevel">Medium</strong>
+                  <span data-i18n="mediumLevelDesc">Realistic first-aid situations</span>
+                  <b>1000 <span data-i18n="questionsLabel">questions</span></b>
+                </button>
+                <button class="quiz-level-card hard" type="button" data-quiz-level="hard">
+                  <span class="quiz-level-icon"><i class="fa-solid fa-shield-heart"></i></span>
+                  <strong data-i18n="hardLevel">Hard</strong>
+                  <span data-i18n="hardLevelDesc">Critical decisions and complex care</span>
+                  <b>1000 <span data-i18n="questionsLabel">questions</span></b>
+                </button>
+              </div>
+            </div>
+            <div class="quiz-game hidden" id="quizGame">
+              <div class="quiz-progress-head">
+                <button class="quiz-change-level" id="quizChangeLevel" type="button"><i class="fa-solid fa-arrow-left"></i><span data-i18n="changeLevel">Change level</span></button>
+                <div class="quiz-progress-copy"><strong id="quizProgressText">1 / 20</strong><span id="quizScoreText">0 correct</span></div>
+              </div>
+              <div class="quiz-progress-track"><span id="quizProgressBar"></span></div>
+              <article class="quiz-question-card">
+                <span class="quiz-question-level" id="quizQuestionLevel"></span>
+                <h2 id="quizQuestionText"></h2>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-explanation hidden" id="quizExplanation"></div>
+                <button class="button button-primary quiz-next hidden" id="quizNext" type="button"><span data-i18n="nextQuestion">Next question</span><i class="fa-solid fa-arrow-right"></i></button>
+              </article>
+            </div>
+            <div class="quiz-results hidden" id="quizResults">
+              <span class="quiz-result-icon"><i class="fa-solid fa-trophy"></i></span>
+              <div class="eyebrow" data-i18n="roundComplete">ROUND COMPLETE</div>
+              <h2><span id="quizFinalScore">0/20</span></h2>
+              <p id="quizResultMessage"></p>
+              <div class="quiz-result-actions">
+                <button class="button button-primary" id="quizNewRound" type="button"><i class="fa-solid fa-rotate"></i><span data-i18n="newRound">Start new round</span></button>
+                <button class="button quiz-secondary" id="quizChooseLevel" type="button"><span data-i18n="chooseAnotherLevel">Choose another level</span></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-notebook" data-view-panel="notebook">
+          <div class="page-intro notebook-heading">
+            <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="privatePages">YOUR PRIVATE PAGES</span></div>
+            <h1 data-i18n="notebookTitle">Thoughts worth <em>keeping.</em></h1>
+            <p class="lead" data-i18n="notebookDesc">A soft place to collect questions, study notes, and little discoveries.</p>
+          </div>
+          <div class="notebook">
+            <div class="notebook-ribbon" aria-hidden="true"><span></span></div>
+            <aside class="notes-sidebar">
+              <div class="notes-sidebar-top"><div><span class="eyebrow" data-i18n="yourNotebook">YOUR NOTEBOOK</span><strong id="notebookNoteCount">0</strong></div><button class="new-note-button" id="newNote"><i class="fa-solid fa-plus"></i><span data-i18n="newNote">New note</span></button></div>
+              <div class="note-list" id="noteList"></div>
+              <div class="notes-hint"><i class="fa-regular fa-lightbulb"></i><span data-i18n="notesSavedLocally">Notes save automatically on this device.</span></div>
+            </aside>
+            <div class="paper-wrap">
+              <div class="paper-toolbar">
+                <input class="note-title-input" id="noteTitle" type="text" maxlength="80" data-i18n-placeholder="untitledNote" placeholder="Untitled note">
+                <div class="paper-tools"><span class="save-state" id="saveState"><i class="fa-solid fa-cloud"></i><span data-i18n="saved">Saved</span></span><button class="icon-button delete-note" id="deleteNote" title="Delete note" aria-label="Delete note"><i class="fa-regular fa-trash-can"></i></button></div>
+              </div>
+              <div class="paper" id="paper">
+                <div class="paper-date" id="paperDate"></div>
+                <textarea id="noteBody" aria-label="Note content" data-i18n-aria="noteContent" placeholder="Let your thoughts find their line..." data-i18n-placeholder="writeThoughts"></textarea>
+                <div class="paper-footer"><span><i class="fa-solid fa-feather-pointed"></i> <span data-i18n="everyThoughtCounts">EVERY THOUGHT COUNTS</span></span><span id="wordCount">0 <span data-i18n="words">WORDS</span></span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="app-footer"><span data-i18n="footerLine">Made for learning, with care.</span><span>DOCTORE SOUHAILA <i class="fa-solid fa-heart"></i></span></footer>
+    </main>
+  </div>
+  <div class="signature-badge">MADE BY KARIM</div>
+  <div class="mobile-scrim" id="mobileScrim"></div>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content" id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
